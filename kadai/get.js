@@ -25,11 +25,58 @@ module.exports.get = (event, context, callback) => {
             });
             return;
         }
-        
-        const response = {
-            statusCode: 200,
-            body: JSON.stringify([result.Item]),
+
+        // owner = result.Item.owner
+        console.log(result.Item)
+        console.log(result.Item.owner)
+        // owner = result.Item.owner
+
+        var params_usertable = {
+            TableName : process.env.DYNAMODB_TABLE_USER,
+            Key: {
+                userId: result.Item.owner,
+            }
         };
-        callback(null, response);
+        console.log(params_usertable)
+    
+        dynamodb.get(params_usertable, (error, result_user) => {
+            if (error) {
+                console.error(error);
+                callback(null, {
+                    statusCode: error.statusCode || 501,
+                    headers: { 'Content-Type': 'text/plain' },
+                    body: 'Couldn\'t fetch the todo item.',
+                });
+                return;
+            }
+                
+            console.log("user");
+            console.log(result_user);
+            console.log("kadai");
+            console.log(result);
+    
+            result.Item.owner = {
+                userId: result_user.Item.userId,
+                userName: result_user.Item.userName,
+                picture: result_user.Item.picture,
+            }
+            console.log("new-kadai");
+            console.log(result);
+
+            const response = {
+                statusCode: 200,
+                body: JSON.stringify([result.Item]),
+            };
+            callback(null, response);
+    
+        });
+    
+    
+
+        // const response = {
+        //     statusCode: 200,
+        //     body: JSON.stringify([result.Item]),
+        // };
+        // callback(null, response);
     });
 };
