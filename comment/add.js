@@ -9,11 +9,10 @@ module.exports.add = (event, context, callback) => {
     const timestamp = new Date().getTime();
     const data = JSON.parse(event.body);
 
-
     const getUserParams = {
         TableName: process.env.DYNAMODB_TABLE_USER,
         Key: {
-            userId: data[0].userId,
+            userId: data.userId,
         },
     };
 
@@ -31,15 +30,13 @@ module.exports.add = (event, context, callback) => {
         
         console.log(result);
         
-        var newComment = [{
-                commnet: data[0].comment,
+        var newComment = {
+                commnet: data.comment,
                 userId: result.Item.userId,
                 userName: result.Item.userName,
                 picture: result.Item.picture,
                 createdAt: new Date().getTime(),
-        }];
-
-        console.log(JSON.stringify(newComment));
+        };
 
         const params = {
             TableName: process.env.DYNAMODB_TABLE,
@@ -50,7 +47,7 @@ module.exports.add = (event, context, callback) => {
                 '#comments': 'comments',
             },
             ExpressionAttributeValues: {
-                ':newComment': newComment,
+                ':newComment': [ newComment ],
             },
             UpdateExpression: 'SET #comments = list_append(#comments, :newComment)',
         };
