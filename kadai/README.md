@@ -21,7 +21,7 @@ API's
 	"picture": "YWJjZGVmZw(base64 encode)",
 	"targetPoint": 10000,
 	"longitude": "35.6657799",
-	"latitude": "139.8028378",
+	"latitude": "139.8028378"
 }
 ```
 
@@ -55,7 +55,7 @@ $ curl https://ahk6fpzxv2.execute-api.us-east-1.amazonaws.com/dev/kadai/
 		"comments": [
 			{
 				"comment": "This is comment.",
-				"createAt": "1552720171120",
+				"createdAt": "1552720171120",
 				"userId": "7ae27ae2-47ef-11e9-9e25-18181818181",
 				"userName": "Gaga",
 				"picture": "https://url/pic.jpg"
@@ -75,7 +75,7 @@ $ curl https://ahk6fpzxv2.execute-api.us-east-1.amazonaws.com/dev/kadai/
 
 **課題statusの値**
 
-* 0: Not Start
+* 0: NotStart
 * 1: WIP
 * 2: InReview
 * 3: Done
@@ -111,7 +111,7 @@ $ curl https://ahk6fpzxv2.execute-api.us-east-1.amazonaws.com/dev/kadai/721be270
 		"comments": [
 			{
 				"comment": "This is comment.",
-				"createAt": "1552720171120",
+				"createdAt": "1552720171120",
 				"userId": "7ae27ae2-47ef-11e9-9e25-18181818181",
 				"userName": "Gaga",
 				"picture": "https://url/pic.jpg"
