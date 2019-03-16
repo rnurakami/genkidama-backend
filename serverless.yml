@@ -46,6 +46,17 @@ functions:
               path:
                 id: true
 
+  get-comments:
+    handler: comments/get.get
+    events:
+      - http:
+          path: comment/{kadaiId}
+          method: get
+          request:
+            parameters:
+              path:
+                kadaiId: true
+
 resources:
   Resources:
     TodosDynamoDbTable:
