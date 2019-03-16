@@ -31,7 +31,7 @@ API's
 | - | - |
 | https://ahk6fpzxv2.execute-api.us-east-1.amazonaws.com/dev/kadai/ | GET |
 
-**input json(sample)**
+**response json(sample)**
 ```
 $ curl https://ahk6fpzxv2.execute-api.us-east-1.amazonaws.com/dev/kadai/
 
@@ -87,7 +87,7 @@ $ curl https://ahk6fpzxv2.execute-api.us-east-1.amazonaws.com/dev/kadai/
 | - | - |
 | https://ahk6fpzxv2.execute-api.us-east-1.amazonaws.com/dev/kadai/{id} | GET |
 
-**input json(sample)**
+**response json(sample)**
 ```
 $ curl https://ahk6fpzxv2.execute-api.us-east-1.amazonaws.com/dev/kadai/721be270-47ba-11e9-ac9a-51b79e74e965
 
