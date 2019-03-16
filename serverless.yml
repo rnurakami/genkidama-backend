@@ -1,6 +1,6 @@
 service: genkidama-backend-api
 
-frameworkVersion: "1.38.0"
+frameworkVersion: "1.39.0"
 
 provider:
   name: aws
@@ -58,7 +58,7 @@ resources:
             AttributeType: S
         KeySchema:
           - 
-            AttributeName: id
+            AttributeName: kadaiId
             KeyType: HASH
         ProvisionedThroughput:
           ReadCapacityUnits: 1
