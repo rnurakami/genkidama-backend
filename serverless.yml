@@ -8,7 +8,7 @@ provider:
   environment:
     DYNAMODB_TABLE: ${self:service}-${opt:stage, self:provider.stage}-kadai
     DYNAMODB_TABLE_USER: ${self:service}-${opt:stage, self:provider.stage}-user
-    S3_BUCKET: ${self:service}-${opt:stage, self:provider.stage}-kadai-photo
+    S3_BUCKET: ${self:service}-${opt:stage, self:provider.stage}-photo
   iamRoleStatements:
     - Effect: Allow
       Action:
@@ -34,6 +34,9 @@ provider:
         - s3:GetObject
         - s3:DeleteObject
       Resource: "arn:aws:s3:::${self:provider.environment.S3_BUCKET}/*"
+
+plugins:
+  - serverless-s3-sync
 
 functions:
   create-kadai:
@@ -148,8 +151,30 @@ resources:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
         TableName: ${self:provider.environment.DYNAMODB_TABLE_USER}
-    MyBucket:
+    photoBacket:
       Type: 'AWS::S3::Bucket'
       Properties:
         BucketName: ${self:provider.environment.S3_BUCKET}
-        AccessControl: PublicReadWrite
+        AccessControl: PublicRead
+        WebsiteConfiguration:
+          IndexDocument: index.html
+    photoBacketPolicy:
+      Type: 'AWS::S3::BucketPolicy'
+      Properties:
+        Bucket:
+          Ref: photoBacket
+        PolicyDocument:
+          Statement:
+            - Sid: PublicReadGetObject
+              Effect: Allow
+              Principal: "*"
+              Action:
+              - s3:GetObject
+              Resource:
+                Fn::Join: ["", ["arn:aws:s3:::",{"Ref": "photoBacket"},"/*"]]
+
+custom:
+  s3Sync:
+    - bucketName: ${self:provider.environment.S3_BUCKET}
+      localDir: static
+      deleteRemoved: false
