@@ -103,7 +103,7 @@ $ curl https://ahk6fpzxv2.execute-api.us-east-1.amazonaws.com/dev/kadai/721be270
 		"description": "this is description.",
 		"picture": "https://url/pic.jpg",
 		"targetPoint": 10000,
-		"currentPoint": 10000,
+		"currentPoint": 0,
 		"longitude": "35.6657799",
 		"latitude": "139.8028378",
 		"status": 0,
