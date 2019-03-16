@@ -1,4 +1,4 @@
-#コメントAPI
+# コメントAPI
 
 API's
 
@@ -21,7 +21,7 @@ API's
         "userName": "kanzaki",
         "comment": "I'm happy!",
         "createdAt": 1552720171542,
-        "picture": "https://s3.amazonaws.com/genkidama-backend-api-dev-s3-photo/kadai/5ca778f0-4800-11e9-bf42-2f95abcbd5ec.jpg"
+        "picture": "https://s3.amazonaws.com/genkidama-backend-api-dev-s3-photo/user-thumbnail/5ca778f0-4800-11e9-bf42-2f95abcbd5ec.jpg"
     },
     {
         same...
@@ -56,7 +56,7 @@ API's
         "userName": "kanzaki",
         "comment": "I'm happy!",
         "createdAt": 1552720171542,
-        "picture": "https://s3.amazonaws.com/genkidama-backend-api-dev-s3-photo/kadai/5ca778f0-4800-11e9-bf42-2f95abcbd5ec.jpg"
+        "picture": "https://s3.amazonaws.com/genkidama-backend-api-dev-s3-photo/user-thumbnail/5ca778f0-4800-11e9-bf42-2f95abcbd5ec.jpg"
     }
 ]
 ```
