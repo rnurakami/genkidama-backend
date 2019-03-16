@@ -11,7 +11,7 @@ module.exports.create = (event, context, callback) => {
     const timestamp = new Date().getTime();
     const data = JSON.parse(event.body);
     const kadaiId = uuid.v1();
-    const imageName = kadaiId + '.jpg';
+    const imageName = 'kadai/' +kadaiId + '.jpg';
     const pictureUrl = 'http://' + process.env.S3_BUCKET + '.s3.amazonaws.com/' + imageName;
 
     const s3Params = {
@@ -19,7 +19,6 @@ module.exports.create = (event, context, callback) => {
         Key: imageName,
         Body: Buffer.from(data.picture, 'base64'),
         ContentType: "image/jpeg",
-        ACL: "public-read",
     };
 
     var putObjectPromise = s3.putObject(s3Params).promise();
