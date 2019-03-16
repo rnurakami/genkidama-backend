@@ -31,7 +31,7 @@ module.exports.add = (event, context, callback) => {
         console.log(result);
         
         var newComment = {
-                commnet: data.comment,
+                comment: data.comment,
                 userId: result.Item.userId,
                 userName: result.Item.userName,
                 picture: result.Item.picture,

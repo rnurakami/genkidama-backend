@@ -34,7 +34,7 @@ module.exports.create = (event, context, callback) => {
 				picture: pictureUrl,
 				targetPoint: data.targetPoint,
 				currentPoint: 0,
-				longitud: data.longitude,
+				longitude: data.longitude,
 				latitude: data.latitude,
 				status: 0,
 				like: 0,
