@@ -26,7 +26,7 @@ provider:
       Resource: "arn:aws:s3:::${self:provider.environment.S3_BUCKET}/*"
 
 functions:
-  create:
+  create-kadai:
     handler: kadai/create.create
     events:
       - http:
@@ -34,7 +34,7 @@ functions:
           method: post
           cors: true
 
-  get:
+  get-kadai:
     handler: kadai/get.get
     events:
       - http:
@@ -45,6 +45,14 @@ functions:
             parameters:
               path:
                 id: true
+
+  list-kadai:
+    handler: kadai/list.list
+    events:
+      - http:
+          path: kadai
+          method: get
+          cors: true
 
   get-comments:
     handler: comment/get.get
