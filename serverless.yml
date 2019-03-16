@@ -94,6 +94,18 @@ functions:
           method: get
           cors: true
 
+  get-user:
+    handler: user/get.get
+    events:
+      - http:
+          path: user/{id}
+          method: get
+          cors: true
+          request:
+            parameters:
+              path:
+                id: true
+
   create-user:
     handler: user/create.create
     events:
