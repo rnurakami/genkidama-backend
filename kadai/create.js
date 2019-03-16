@@ -25,10 +25,11 @@ module.exports.create = (event, context, callback) => {
                 },
             ],
             longitude: data.longitude,
-            latitud: data.latitude,
+            latitude: data.latitude,
             picture_base64: data.picture_base64,
             createdAt: timestamp,
             updatedAt: timestamp,
+
         },
     };
     
