@@ -16,28 +16,29 @@ module.exports.create = (event, context, callback) => {
 		Item: {
 			userId: uuid.v1(),
 			userName: data.userName,
-			budget: data.budget,
+			pucture: data.picture,
 			userCategory: data.userCategory,
+			budget: data.budget,
 			createdAt: timestamp,
 			updatedAt: timestamp,
 		},
 	};
-    
-    dynamodb.put(params, (error) => {
-        if (error) {
-            console.error(error);
-            callback(null, {
-                statusCode: error.statusCode || 501,
-                headers: { 'Content-Type': 'text/plain' },
-                body: 'Couldn\'t create the User.',
-            });
-            return;
-        }
-        
-        const response = {
-            statusCode: 200,
-            body: JSON.stringify(params.Item),
-        };
-        callback(null, response);
-    });
+	
+	dynamodb.put(params, (error) => {
+		if (error) {
+			console.error(error);
+			callback(null, {
+				statusCode: error.statusCode || 501,
+				headers: { 'Content-Type': 'text/plain' },
+				body: 'Couldn\'t create the User.',
+			});
+			return;
+		}
+		
+		const response = {
+			statusCode: 200,
+			body: JSON.stringify(params.Item),
+		};
+		callback(null, response);
+	});
 };

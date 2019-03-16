@@ -1,6 +1,0 @@
-{
-	"userName": "kanzaki",
-	"profilePicture": "base64 or s3://url",
-	"budget": "123456",
-	"userCategory": "costomer"
-}
