@@ -20,6 +20,15 @@ provider:
       Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.DYNAMODB_TABLE}"
     - Effect: Allow
       Action:
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.DYNAMODB_TABLE_USER}"
+    - Effect: Allow
+      Action:
         - s3:PutObject
         - s3:GetObject
         - s3:DeleteObject
@@ -78,6 +87,34 @@ functions:
             parameters:
               path:
                 kadaiId: true
+
+  list-user:
+    handler: user/list.list
+    events:
+      - http:
+          path: user
+          method: get
+          cors: true
+
+  get-user:
+    handler: user/get.get
+    events:
+      - http:
+          path: user/{id}
+          method: get
+          cors: true
+          request:
+            parameters:
+              path:
+                id: true
+
+  create-user:
+    handler: user/create.create
+    events:
+      - http:
+          path: user
+          method: post
+          cors: true
 
 resources:
   Resources:

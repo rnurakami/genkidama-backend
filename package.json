@@ -4,6 +4,7 @@
   "description": "",
   "author": "",
   "dependencies": {
+    "aws-sdk": "^2.422.0",
     "uuid": "^2.0.3"
   },
   "devDependencies": {
