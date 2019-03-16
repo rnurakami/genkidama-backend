@@ -5,5 +5,8 @@
   "author": "",
   "dependencies": {
     "uuid": "^2.0.3"
+  },
+  "devDependencies": {
+    "serverless-s3-sync": "^1.7.3"
   }
 }

@@ -25,6 +25,9 @@ provider:
         - s3:DeleteObject
       Resource: "arn:aws:s3:::${self:provider.environment.S3_BUCKET}/*"
 
+plugins:
+  - serverless-s3-sync
+
 functions:
   create-kadai:
     handler: kadai/create.create
@@ -116,3 +119,7 @@ resources:
               Resource:
                 Fn::Join: ["", ["arn:aws:s3:::",{"Ref": "photoBacket"},"/*"]]
 
+custom:
+  s3Sync:
+    - bucketName: ${self:provider.environment.S3_BUCKET}
+      localDir: static
