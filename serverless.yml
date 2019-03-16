@@ -108,6 +108,15 @@ functions:
           method: post
           cors: true
 
+
+  donate-point:
+    handler: point/donate.donate
+    events:
+      - http:
+          path: point
+          method: post
+          cors: true
+
 resources:
   Resources:
     TodosDynamoDbTable:
