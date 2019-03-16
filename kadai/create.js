@@ -14,6 +14,9 @@ module.exports.create = (event, context, callback) => {
 	const imageName = 'kadai/' +kadaiId + '.jpg';
 	const pictureUrl = 'http://' + process.env.S3_BUCKET + '.s3.amazonaws.com/' + imageName;
 
+	console.log("picture_base64")
+	console.log(data.picture)
+
 	const s3Params = {
 		Bucket: process.env.S3_BUCKET,
 		Key: imageName,
