@@ -47,11 +47,22 @@ functions:
                 id: true
 
   get-comments:
-    handler: comments/get.get
+    handler: comment/get.get
     events:
       - http:
           path: comment/{kadaiId}
           method: get
+          request:
+            parameters:
+              path:
+                kadaiId: true
+
+  add-comment:
+    handler: comment/add.add
+    events:
+      - http:
+          path: comment/{kadaiId}
+          method: put
           request:
             parameters:
               path:
