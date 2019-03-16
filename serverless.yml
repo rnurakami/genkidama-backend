@@ -123,3 +123,4 @@ custom:
   s3Sync:
     - bucketName: ${self:provider.environment.S3_BUCKET}
       localDir: static
+      deleteRemoved: false
