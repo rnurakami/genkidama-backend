@@ -9,6 +9,14 @@ module.exports.add = (event, context, callback) => {
     const timestamp = new Date().getTime();
     const data = JSON.parse(event.body);
     
+    var newComments = data.map(function(value){
+        return {
+            commnet: value.comment,
+            add_user: value.add_user,
+            created_at: new Date().getTime(),
+        };
+    });
+    
     const params = {
         TableName: process.env.DYNAMODB_TABLE,
         Key: {
@@ -18,7 +26,7 @@ module.exports.add = (event, context, callback) => {
             '#comments': 'comments',
         },
         ExpressionAttributeValues: {
-            ':newComment': data,
+            ':newComment': newComments,
         },
         UpdateExpression: 'SET #comments = list_append(#comments, :newComment)',
     };
