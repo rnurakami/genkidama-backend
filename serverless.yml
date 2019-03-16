@@ -54,6 +54,28 @@ functions:
           method: get
           cors: true
 
+  get-comments:
+    handler: comment/get.get
+    events:
+      - http:
+          path: comment/{kadaiId}
+          method: get
+          request:
+            parameters:
+              path:
+                kadaiId: true
+
+  add-comment:
+    handler: comment/add.add
+    events:
+      - http:
+          path: comment/{kadaiId}
+          method: put
+          request:
+            parameters:
+              path:
+                kadaiId: true
+
 resources:
   Resources:
     TodosDynamoDbTable:
