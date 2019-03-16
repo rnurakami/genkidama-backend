@@ -8,7 +8,7 @@ API's
 
 | url | method |
 | - | - |
-| https://ahk6fpzxv2.execute-api.us-east-1.amazonaws.com/dev/point | POST |
+| https://c5xm7iqqv1.execute-api.us-east-1.amazonaws.com/dev/point | POST |
 
 **request json(sample)**
 

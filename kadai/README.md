@@ -10,7 +10,7 @@ API's
 
 | url | method |
 | - | - |
-| https://ahk6fpzxv2.execute-api.us-east-1.amazonaws.com/dev/kadai/ | POST |
+| https://c5xm7iqqv1.execute-api.us-east-1.amazonaws.com/dev/kadai/ | POST |
 
 **input json(sample)**
 ```
@@ -29,7 +29,7 @@ API's
 
 | url | method |
 | - | - |
-| https://ahk6fpzxv2.execute-api.us-east-1.amazonaws.com/dev/kadai/ | GET |
+| https://c5xm7iqqv1.execute-api.us-east-1.amazonaws.com/dev/kadai/ | GET |
 
 **response json(sample)**
 ```
@@ -85,7 +85,7 @@ $ curl https://ahk6fpzxv2.execute-api.us-east-1.amazonaws.com/dev/kadai/
 
 | url | method |
 | - | - |
-| https://ahk6fpzxv2.execute-api.us-east-1.amazonaws.com/dev/kadai/{id} | GET |
+| https://c5xm7iqqv1.execute-api.us-east-1.amazonaws.com/dev/kadai/{id} | GET |
 
 **response json(sample)**
 ```

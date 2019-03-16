@@ -10,7 +10,7 @@ API's
 
 | url | method |
 | - | - |
-| https://ahk6fpzxv2.execute-api.us-east-1.amazonaws.com/dev/user/ | POST |
+| https://c5xm7iqqv1.execute-api.us-east-1.amazonaws.com/dev/user/ | POST |
 
 **input json(sample)**
 ```
@@ -27,7 +27,7 @@ API's
 
 | url | method |
 | - | - |
-| https://ahk6fpzxv2.execute-api.us-east-1.amazonaws.com/dev/user/ | GET |
+| https://c5xm7iqqv1.execute-api.us-east-1.amazonaws.com/dev/user/ | GET |
 
 **response json(sample)**
 ```
@@ -61,7 +61,7 @@ $ curl https://ahk6fpzxv2.execute-api.us-east-1.amazonaws.com/dev/user/
 
 | url | method |
 | - | - |
-| https://ahk6fpzxv2.execute-api.us-east-1.amazonaws.com/dev/user/{id} | GET |
+| https://c5xm7iqqv1.execute-api.us-east-1.amazonaws.com/dev/user/{id} | GET |
 
 **response json(sample)**
 ```

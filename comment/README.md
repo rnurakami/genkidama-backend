@@ -10,7 +10,7 @@ API's
 
 | url | method |
 | - | - |
-| https://ahk6fpzxv2.execute-api.us-east-1.amazonaws.com/dev/comment/{kadaiId} | GET |
+| https://c5xm7iqqv1.execute-api.us-east-1.amazonaws.com/dev/comment/{kadaiId} | GET |
 
 
 **response json(sample)** 
@@ -36,7 +36,7 @@ API's
 
 | url | method |
 | - | - |
-| https://ahk6fpzxv2.execute-api.us-east-1.amazonaws.com/dev/comment/{kadaiId} | PUT |
+| https://c5xm7iqqv1.execute-api.us-east-1.amazonaws.com/dev/comment/{kadaiId} | PUT |
 
 
 **request json(sample)**
